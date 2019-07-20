@@ -36,16 +36,12 @@ class LikeKoa2 {
         return ctx
     }
 
-    handleRequest(ctx, fn) {
-        return fn(ctx)
-    }
-
     callback() {
         const fn = compose(this.middlewareList)
 
         return (req, res) => {
             const ctx = this.createContext(req, res)
-            return this.handleRequest(ctx, fn)
+            return fn(ctx);
         }
     }
 
