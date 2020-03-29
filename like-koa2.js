@@ -7,6 +7,9 @@ function compose(middlewareList) { // 组合中间件
       try {
         return Promise.resolve(
           fn(ctx, dispatch.bind(null, i + 1))  // promise
+          // fn(ctx, function next() {
+          //   return dispatch(i + 1)
+          // })
         )
       } catch (err) {
         return Promise.reject(err)
