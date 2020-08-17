@@ -30,10 +30,7 @@ class LikeKoa2 {
   }
 
   createContext(req, res) { // 创建 ctx 对象
-    const ctx = {
-      req,
-      res
-    }
+    const ctx = { req, res }
     ctx.query = req.query
     return ctx
   }
